@@ -25,7 +25,7 @@ def save_aseprite_tag(tag):
 
 
 def clone_aseprite(tag):
-    clone_url = f"https://github.com/{ASEPRITE_REPOSITORY}.git"
+    clone_url = f"https://github.com/aseprite/aseprite.git"
     git_cmd = f"git clone -b {tag} {clone_url} src/aseprite --depth 1"
     os.system(git_cmd)
     os.system("cd src/aseprite && git submodule update --init --recursive")
