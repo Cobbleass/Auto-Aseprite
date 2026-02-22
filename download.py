@@ -8,7 +8,7 @@ SKIA_RELEASE_FILE_NAME = "Skia-Windows-Release-x64.zip"
 
 def get_latest_tag_aseprite():
     response = requests.get(
-        f"https://github.com/aseprite/aseprite.git"
+        f"https://api.github.com/repos/{ASEPRITE_REPOSITORY}/releases"
     )
     response_json = response.json()
 
@@ -25,7 +25,7 @@ def save_aseprite_tag(tag):
 
 
 def clone_aseprite(tag):
-    clone_url = f"https://github.com/aseprite/aseprite.git"
+    clone_url = f"https://github.com/{ASEPRITE_REPOSITORY}.git"
     git_cmd = f"git clone -b {tag} {clone_url} src/aseprite --depth 1"
     os.system(git_cmd)
     os.system("cd src/aseprite && git submodule update --init --recursive")
