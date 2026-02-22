@@ -8,7 +8,7 @@ SKIA_RELEASE_FILE_NAME = "Skia-Windows-Release-x64.zip"
 
 def get_latest_tag_aseprite():
     response = requests.get(
-        f"https://api.github.com/repos/{ASEPRITE_REPOSITORY}/releases"
+        f"hhttps://github.com/aseprite/aseprite.git"
     )
     response_json = response.json()
 
